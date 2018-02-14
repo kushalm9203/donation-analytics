@@ -8,3 +8,5 @@ pytest.
 insight_testsuite also works.
 
 Initially, I thought that if a donor's transactions are out of order, i.e. if an old transaction (in time) is read after a more recent transaction, then this recent transaction (in time) should be considered as a transaction from a repeat donor. If that is the case, the donor hash table can map donor (donor, zipcode) to a heap consisting of all of the donor's transactions arranged based on transaction dates. So if a transaction isn't from the oldest year it is considered to be a repeat donor transaction. Except for the oldest year, all the others would be repeat donor transactions. The FAQ is vague but it says I don't need to go back and change anything and I should consider every transaction as a new transaction without considering the stored transaction again.
+
+Sorry for the delay
