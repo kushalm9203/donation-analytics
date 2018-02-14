@@ -3,6 +3,8 @@ Approach: I read the records from the stream and for each record, store the dono
 
 I use a config.py file which configures the path to the input and output files. This is OS-agnostic. I make use of datetime library (to check if date is valid), math (ceil() method for nearest-rank method), os and sys (to find paths).
 
-I have a separate tests directory along with the given src, input, output directories. I make use of pytest for unit tests. It can be executed by going into tests directory and using the command: pytest
+I have a separate tests directory along with the given src, input, output directories. I make use of pytest for unit tests. It can be executed by going into tests directory and using the command: 
+pytest
+insight_testsuite also works.
 
 Initially, I thought that if a donor's transactions are out of order, i.e. if an old transaction (in time) is read after a more recent transaction, then this recent transaction (in time) should be considered as a transaction from a repeat donor. If that is the case, the donor hash table can map donor (donor, zipcode) to a heap consisting of all of the donor's transactions arranged based on transaction dates. So if a transaction isn't from the oldest year it is considered to be a repeat donor transaction. Except for the oldest year, all the others would be repeat donor transactions. The FAQ is vague but it says I don't need to go back and change anything and I should consider every transaction as a new transaction without considering the stored transaction again.
